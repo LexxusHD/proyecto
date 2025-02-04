@@ -1,7 +1,26 @@
-<script>
-    window.location.href = "wifi:S:ProyectoVinculador;T:WPA;P:1234hola;H:false;;";
-    setTimeout(() => {
-      window.location.href = "http://192.168.1.100:5000/";
-    }, 3000); // Redirige después de 3 segundos
-  </script>
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectando al WiFi...</title>
+    <script>
+        // Intentar conectar a la red WiFi (esto no funciona en todos los dispositivos)
+        function connectToWiFi() {
+            window.location.href = "wifi:S:ProyectoVinculador;T:WPA;P:1234hola;H:false;;";
+        }
+
+        // Conectar al WiFi primero
+        connectToWiFi();
+
+        // Esperar 3 segundos y luego redirigir a la página web
+        setTimeout(() => {
+            window.location.href = "http://192.168.1.100:5000/"; // Cambia por tu página web
+        }, 3000);
+    </script>
+</head>
+<body>
+    <h2>Conectando al WiFi...</h2>
+    <p>Si no se conecta automáticamente, únete manualmente y serás redirigido.</p>
+</body>
+</html>
